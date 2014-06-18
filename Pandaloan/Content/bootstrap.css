@@ -4929,12 +4929,22 @@ a.list-group-item.active > .badge,
 
 .jumbotron {
   padding: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 3px;
   font-size: 21px;
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
   background-color: #eeeeee;
+}
+
+.jumbotron-blue {
+  padding: 30px;
+  margin-bottom: 3px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #1b4871;
 }
 
 .jumbotron h1 {
@@ -4950,12 +4960,24 @@ a.list-group-item.active > .badge,
   border-radius: 6px;
 }
 
+.container .jumbotron-blue {
+  border-radius: 6px;
+}
+
 @media screen and (min-width: 768px) {
   .jumbotron {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+    .jumbotron-blue {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .container .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+    .container .jumbotron-blue {
     padding-right: 60px;
     padding-left: 60px;
   }

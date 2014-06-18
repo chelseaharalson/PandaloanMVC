@@ -1,11 +1,15 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
-<div class="jumbotron">
-    <img src="~/Content/pandaloan.png" alt="Pandaloan">
+<div class="jumbotron-blue">
+    <table>
+        <tr>
+            <th>Email: <input type="email" name="email"> &nbsp;</th>
+            <th>Password: <input type="password" name="password"> &nbsp;</th>
+            <th><p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Login &raquo; &nbsp;&nbsp;</a></p></th>
+        </tr>
+    </table>
 </div>
-
 <div class="row">
     <div class="col-md-4">
         <h2>Lending $$$ Problems</h2>
@@ -24,6 +28,6 @@
     <div class="col-md-4">
         <h2>Getting Started</h2>
         <p>Best of all Pandaloan.com is free and easy to use. It only takes minutes to set up!!!</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Register &raquo;</a></p>
+        <p>@Html.ActionLink("Register", "Create", "User")</p>
     </div>
 </div>
