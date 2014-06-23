@@ -6,13 +6,18 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using PandaLoan.Models;
+using Pandaloan.Models;
 
 namespace Pandaloan.Controllers
 {
     public class UserController : Controller
     {
         private PandaloanDBContext db = new PandaloanDBContext();
+
+        public String login()
+        {
+            return "It works!";
+        }
 
         // GET: /User/
         public ActionResult Index()
