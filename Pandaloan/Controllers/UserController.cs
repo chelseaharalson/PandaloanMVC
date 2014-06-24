@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Pandaloan.Models;
+using System.Data.SqlClient;
 
 namespace Pandaloan.Controllers
 {
@@ -14,9 +15,33 @@ namespace Pandaloan.Controllers
     {
         private PandaloanDBContext db = new PandaloanDBContext();
 
-        public String login()
+        public String login(User model)
         {
-            return "It works!";
+            string queryString = "SELECT 1 FROM Users WHERE email = '" + model.email + "' AND password = '" + model.password + "'";
+            string connectionString = "Data Source=(LocalDb)\\v11.0;AttachDbFilename=|DataDirectory|\\Pandaloan.mdf;Initial Catalog=Pandaloan;Integrated Security=True";
+            string test = "";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                //command.Parameters.AddWithValue("@tPatSName", "Your-Parm-Value");
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                try
+                {
+                    while (reader.Read())
+                    {
+                        //Console.WriteLine(String.Format("{0}, {1}",
+                        //reader["tPatCulIntPatIDPk"], reader["tPatSFirstname"]));// etc
+                        test = test + "password";
+                    }
+                }
+                finally
+                {
+                    // Always call Close when done reading.
+                    reader.Close();
+                }
+}
+            return test;
         }
 
         // GET: /User/
