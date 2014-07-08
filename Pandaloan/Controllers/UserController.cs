@@ -15,11 +15,11 @@ namespace Pandaloan.Controllers
     {
         private PandaloanDBContext db = new PandaloanDBContext();
 
-        public String login(User model)
+        public ActionResult login(User model)
         {
             string queryString = "SELECT 1 FROM Users WHERE email = '" + model.email + "' AND password = '" + model.password + "'";
             string connectionString = "Data Source=(LocalDb)\\v11.0;AttachDbFilename=|DataDirectory|\\Pandaloan.mdf;Initial Catalog=Pandaloan;Integrated Security=True";
-            string test = "";
+            ActionResult ar = null;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -28,11 +28,13 @@ namespace Pandaloan.Controllers
                 SqlDataReader reader = command.ExecuteReader();
                 try
                 {
-                    while (reader.Read())
+                    if (reader.HasRows)
                     {
-                        //Console.WriteLine(String.Format("{0}, {1}",
-                        //reader["tPatCulIntPatIDPk"], reader["tPatSFirstname"]));// etc
-                        test = test + "password";
+
+                    }
+                    else
+                    {
+                        ar = RedirectToAction("Relogin", "Home");
                     }
                 }
                 finally
@@ -41,7 +43,7 @@ namespace Pandaloan.Controllers
                     reader.Close();
                 }
 }
-            return test;
+            return ar;
         }
 
         // GET: /User/

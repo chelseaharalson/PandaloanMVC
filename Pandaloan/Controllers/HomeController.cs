@@ -26,5 +26,12 @@ namespace Pandaloan.Controllers
 
             return View();
         }
+
+        public ActionResult Relogin()
+        {
+            ViewBag.Message = "Your relogin page.";
+
+            return View();
+        }
     }
 }
