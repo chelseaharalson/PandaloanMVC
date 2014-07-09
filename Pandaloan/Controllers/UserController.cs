@@ -17,7 +17,8 @@ namespace Pandaloan.Controllers
 
         public ActionResult login(User model)
         {
-            string queryString = "SELECT 1 FROM Users WHERE email = '" + model.email + "' AND password = '" + model.password + "'";
+            CommonLib cl = new CommonLib();
+            string queryString = "SELECT 1 FROM Users WHERE email = '" + model.email + "' AND password = '" + cl.CreateMD5Hash(model.password) + "'";
             string connectionString = "Data Source=(LocalDb)\\v11.0;AttachDbFilename=|DataDirectory|\\Pandaloan.mdf;Initial Catalog=Pandaloan;Integrated Security=True";
             ActionResult ar = null;
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -30,7 +31,7 @@ namespace Pandaloan.Controllers
                 {
                     if (reader.HasRows)
                     {
-
+                        
                     }
                     else
                     {
