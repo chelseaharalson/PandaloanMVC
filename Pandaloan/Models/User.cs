@@ -13,7 +13,7 @@ namespace Pandaloan.Models
         CommonLib cl = new CommonLib();
         public int userID { get; set; }
         public string email { get; set; }
-        public string password { get { return this._password; } set { this._password = cl.CreateMD5Hash(value); } }
+        public string password { get; set; }
         public string address1 { get; set; }
         public string address2 { get; set; }
         public string city { get; set; }

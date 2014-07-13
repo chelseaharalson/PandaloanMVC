@@ -84,6 +84,10 @@ namespace Pandaloan.Controllers
             if (ModelState.IsValid)
             {
                 db.Users.Add(user);
+                CommonLib cl = new CommonLib();
+                var _user = db.Users.Find(user.userID);
+                _user.password = cl.CreateMD5Hash(user.password);
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
