@@ -6,20 +6,19 @@
 <br />
 <h2>Please re-enter your username and password.</h2>
 <br />
-<div>
+<div class="jumbotron-blue">
     @using (Html.BeginForm("login", "User"))
     {
         <table>
             <tr>
                 <td>Email: &nbsp;&nbsp; @Html.EditorFor(model => model.email) &nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td>Password: &nbsp;&nbsp; @Html.EditorFor(model => model.password) &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td><input type="submit" value="Submit" /></td>
-            </tr>
-            <tr>
-                <td><br />Reset Password</td>
+                <td><input type="submit" class="btn" value="Login" /></td>
             </tr>
         </table>
-        <br /><br />
     }
 </div>
+
+<br />
+<h4>Reset Password</h4>
 

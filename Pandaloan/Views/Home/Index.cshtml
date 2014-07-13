@@ -9,7 +9,7 @@
             <tr>
                 <th>Email: &nbsp;&nbsp; @Html.EditorFor(model => model.email) &nbsp;&nbsp;&nbsp;</th>
                 <th>Password: &nbsp;&nbsp; @Html.EditorFor(model => model.password) &nbsp;&nbsp;&nbsp;</th>
-                <th><input type="submit" value="Submit"/></th>
+                <th><input type="submit" class="btn" value="Login"/></th>
             </tr>
         </table>
     }
@@ -32,6 +32,7 @@
     <div class="col-md-4">
         <h2>Getting Started</h2>
         <p>Best of all Pandaloan.com is free and easy to use. It only takes minutes to set up!!!</p>
-        <p>@Html.ActionLink("Register", "Create", "User", new { }, null)</p>
+        <br />
+        <p>@Html.ActionLink(HttpUtility.HtmlDecode("Register &raquo;"), "Create", "User", new { }, new { @class = "btn btn-default" })</p>
     </div>
 </div>
