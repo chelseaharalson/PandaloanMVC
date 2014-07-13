@@ -9,8 +9,6 @@ namespace Pandaloan.Models
 {
     public class User
     {
-        private string _password;
-        CommonLib cl = new CommonLib();
         public int userID { get; set; }
         public string email { get; set; }
         public string password { get; set; }
