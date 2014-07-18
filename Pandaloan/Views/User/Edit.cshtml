@@ -18,6 +18,22 @@
         @Html.HiddenFor(model => model.userID)
 
         <div class="form-group">
+            @Html.LabelFor(model => model.firstname, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.firstname)
+                @Html.ValidationMessageFor(model => model.firstname)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.lastname, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.lastname)
+                @Html.ValidationMessageFor(model => model.lastname)
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.email, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.email)

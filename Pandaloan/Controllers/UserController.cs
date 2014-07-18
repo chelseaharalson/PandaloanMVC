@@ -79,7 +79,7 @@ namespace Pandaloan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="userID,email,password,address1,address2,city,state,zipcode,lastlogin")] User user)
+        public ActionResult Create([Bind(Include="userID,firstname,lastname,email,password,address1,address2,city,state,zipcode,lastlogin")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -115,7 +115,7 @@ namespace Pandaloan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="userID,email,password,address1,address2,city,state,zipcode,lastlogin")] User user)
+        public ActionResult Edit([Bind(Include="userID,firstname,lastname,email,password,address1,address2,city,state,zipcode,lastlogin")] User user)
         {
             if (ModelState.IsValid)
             {
